@@ -54,7 +54,7 @@ header{
     bottom: auto;
     border-bottom: 0;
     z-index: 1000;
-    }
+  }
 
 
   div.wrapper{
@@ -75,6 +75,7 @@ header{
       text-indent: -10000px;
       margin: 0;
     }
+
     img{
       flex: 0 1 auto;
       margin: 0;
@@ -120,7 +121,7 @@ header{
           flex: 1 1 100%;
           text-align: center;
           list-style-type: none;
-          @include linx(transparent, transparent, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3))
+          @include linx(transparent, transparent, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
           a {
             display: block;
             padding: 24px 15px;
