@@ -136,7 +136,9 @@ header {
               background-color: rgba(255, 255, 255, 0.3); }
             header div.wrapper nav ul li a:active {
               background-color: rgba(255, 255, 255, 0.3); }
-            header div.wrapper nav ul li a.current {
+            header div.wrapper nav ul li a.active {
+              background-color: rgba(255, 255, 255, 0.3); }
+            header div.wrapper nav ul li a.isactive {
               background-color: rgba(255, 255, 255, 0.3); }
           header div.wrapper nav ul li a {
             display: block;
@@ -195,20 +197,20 @@ section#top-banner {
     color: #fff; }
     section#top-banner .banner-text h2 {
       padding-bottom: 20px; }
-    section#top-banner .banner-text button {
+    section#top-banner .banner-text a {
+      display: inline-block;
       color: #fff;
       text-transform: uppercase;
+      text-decoration: none;
       border: 1px solid #fff;
       width: 200px;
       padding: 10px 0;
       margin-bottom: 10px;
-      cursor: pointer;
       background-color: rgba(255, 104, 53, 0.3);
-      transition: all 0.5s ease; }
-      section#top-banner .banner-text button.current, section#top-banner .banner-text button:hover {
+      transition: all 0.5s ease;
+      cursor: pointer; }
+      section#top-banner .banner-text a.current, section#top-banner .banner-text a:hover {
         background-color: #ff6835; }
-      section#top-banner .banner-text button:focus {
-        outline: 0px; }
 
 section#our-work {
   padding-bottom: 50px;

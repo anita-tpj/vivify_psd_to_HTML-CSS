@@ -42,15 +42,15 @@ gulp.task('scripts', function(){
 
   
   // Watch & Serve
-gulp.task('serve', ['message', 'imageMin', 'sass', 'scripts'], function() {
+gulp.task('serve', ['message', 'imageMin', 'sass'], function() {
     browserSync.init({
         server: ""  
     });
 
-    gulp.watch('scripts/*.js', ['scripts']);
+    //gulp.watch('scripts/*.js', ['scripts']);
     gulp.watch('img/*', ['imageMin']);
     gulp.watch('scss/*.scss', ['sass']);
-    gulp.watch("src/*.html").on('change', browserSync.reload);
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 // Default Task
