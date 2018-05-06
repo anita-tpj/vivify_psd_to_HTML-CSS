@@ -1,0 +1,421 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*Variables*/
+/*---------------SCSS for colors---------------*/
+/*---------------SCSS for font-family---------------*/
+/*---------------SCSS for device size---------------*/
+/*---------- Mixins  ----------*/
+/*-----------General Style----------*/
+html, body {
+  font-family: Arial, sans-serif;
+  height: 100%; }
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold; }
+
+/*----------General Layout----------*/
+div.container {
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: 65px auto auto;
+  grid-template-areas: "header header header" "content content content" "footer footer footer"; }
+
+header {
+  grid-area: header; }
+
+main {
+  grid-area: content; }
+
+footer {
+  grid-area: footer; }
+
+/*----------- Header ----------*/
+header {
+  background-color: #FF6835;
+  transition: background-color .6s ease; }
+  header.header-affix {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 65px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: auto;
+    border-bottom: 0;
+    z-index: 1000; }
+  header div.wrapper {
+    display: flex;
+    margin: 0 auto;
+    /*
+    h1#logo{
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0 20px 20px 0;
+      text-indent: -10000px;
+      width: 100px;
+      height: 102px;
+      background: url(img/logo.png) no-repeat;
+      z-index: 30;
+    }
+*/ }
+    header div.wrapper h1#logo {
+      text-indent: -10000px;
+      margin: 0; }
+    header div.wrapper img {
+      flex: 0 1 auto;
+      margin: 0;
+      padding: 0 20px 20px 0;
+      width: 100px;
+      height: 102px;
+      z-index: 30; }
+    header div.wrapper nav {
+      flex: 1 1 auto;
+      margin-left: auto;
+      z-index: 20; }
+      header div.wrapper nav h2 {
+        line-height: 0;
+        margin: 0;
+        text-indent: -10000px; }
+      header div.wrapper nav #burger-nav {
+        background: url(img/burger.png) no-repeat 98% 70%;
+        height: 65px;
+        cursor: pointer; }
+      header div.wrapper nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -84px;
+        background-color: rgba(0, 0, 0, 0.7);
+        max-height: 0;
+        overflow: hidden; }
+        header div.wrapper nav ul.open {
+          max-height: 800px;
+          transition: max-height 0.8s linear; }
+        header div.wrapper nav ul li {
+          flex: 1 1 100%;
+          text-align: center;
+          list-style-type: none; }
+          header div.wrapper nav ul li a {
+            background-color: transparent;
+            color: #fff; }
+            header div.wrapper nav ul li a:visited {
+              background-color: transparent; }
+            header div.wrapper nav ul li a:hover {
+              background-color: rgba(255, 255, 255, 0.3); }
+            header div.wrapper nav ul li a:active {
+              background-color: rgba(255, 255, 255, 0.3); }
+            header div.wrapper nav ul li a.current {
+              background-color: rgba(255, 255, 255, 0.3); }
+          header div.wrapper nav ul li a {
+            display: block;
+            padding: 24px 15px;
+            text-transform: uppercase;
+            text-decoration: none; }
+  @media screen and (min-width: 768px) {
+    header div.wrapper {
+      display: flex;
+      width: 90%;
+      margin: 0 auto; }
+      header div.wrapper nav {
+        flex: 0 1 auto; }
+        header div.wrapper nav #burger-nav {
+          display: none; }
+        header div.wrapper nav ul {
+          flex-wrap: nowrap;
+          align-items: center;
+          margin-left: auto;
+          background-color: transparent;
+          height: 65px;
+          max-height: 65px;
+          overflow: visible;
+          transition: none; }
+          header div.wrapper nav ul li {
+            flex: 1 0 auto; } }
+
+/*----------- Main Content ----------*/
+section#top-banner {
+  position: relative;
+  height: 0;
+  padding-bottom: 75%;
+  z-index: 1;
+  background: url(img/hero-image-xs.jpg) no-repeat center top;
+  background-size: cover;
+  /* set height to pixels if you want angle to change with screen width */ }
+  @media only screen and (min-width: 480px) {
+    section#top-banner {
+      background: url(img/hero-image-sm.jpg) no-repeat center top;
+      background-size: cover; } }
+  @media only screen and (min-width: 992px) {
+    section#top-banner {
+      background: url(img/hero-image.jpg) no-repeat center top;
+      background-size: cover; } }
+  section#top-banner svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5vw; }
+  section#top-banner .banner-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; }
+    section#top-banner .banner-text h2 {
+      padding-bottom: 20px; }
+    section#top-banner .banner-text button {
+      color: #fff;
+      text-transform: uppercase;
+      border: 1px solid #fff;
+      width: 200px;
+      padding: 10px 0;
+      margin-bottom: 10px;
+      cursor: pointer;
+      background-color: rgba(255, 104, 53, 0.3);
+      transition: all 0.5s ease; }
+      section#top-banner .banner-text button.current, section#top-banner .banner-text button:hover {
+        background-color: #ff6835; }
+      section#top-banner .banner-text button:focus {
+        outline: 0px; }
+
+section#our-work {
+  padding-bottom: 50px;
+  position: relative; }
+  section#our-work div.wrapper {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center; }
+    section#our-work div.wrapper h2 {
+      flex: 1 1 100%;
+      color: #FF6835; }
+    @media only screen and (max-width: 581px) {
+      section#our-work div.wrapper div.work:first-of-type {
+        max-width: 100%; }
+        section#our-work div.wrapper div.work:first-of-type p {
+          text-align: center; } }
+    section#our-work div.wrapper div.work {
+      padding: 2%;
+      flex: 1 1 46%;
+      max-width: 260px; }
+      section#our-work div.wrapper div.work p {
+        line-height: 1.6;
+        font-size: 0.8rem;
+        user-select: none; }
+      section#our-work div.wrapper div.work .work-img-mask p.work-name {
+        line-height: 0;
+        overflow: hidden;
+        color: #fff;
+        transition: all .5s ease; }
+      section#our-work div.wrapper div.work .work-img-mask:hover {
+        position: relative;
+        cursor: pointer; }
+        section#our-work div.wrapper div.work .work-img-mask:hover p.work-name {
+          padding: 15px;
+          margin-top: -45px;
+          background: url(img/arrow.svg) no-repeat 85% 50%;
+          position: absolute;
+          z-index: 100;
+          width: 100%;
+          display: block; }
+        section#our-work div.wrapper div.work .work-img-mask:hover:after {
+          content: "";
+          display: block;
+          position: absolute;
+          background: rgba(255, 255, 255, 0.4) url(img/eye_preview.png) no-repeat 50% 50%;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 80%; }
+  @media only screen and (min-width: 992px) {
+    section#our-work div.wrapper {
+      display: flex;
+      width: 90%;
+      margin: 0 auto; }
+      section#our-work div.wrapper div.work {
+        flex: 1 1 20%;
+        padding: 2%;
+        width: 250px; } }
+
+h2.who-are-we {
+  position: relative;
+  z-index: 110; }
+
+section#who-are-we {
+  background-color: #FF6835;
+  position: relative;
+  padding: 150px 0;
+  margin-top: -4vw;
+  z-index: 100;
+  -webkit-clip-path: polygon(0 calc(0% + 5vw), 100% 0, 100% calc(100% - 5vw), 0 100%);
+  clip-path: polygon(0 calc(0% + 5vw), 100% 0, 100% calc(100% - 5vw), 0 100%);
+  clip-path: url("#clip-shape");
+  -webkit-clip-path: url("#clip-shape");
+  /*
+  &:before {
+    background: inherit;
+    top: -75px;
+    content: '';
+    display: block;
+    height: 35%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(-3.5deg);
+    transform-origin: 100%;
+    z-index: -1;
+  }
+
+  &:after {
+      background: $primaryColor;
+      bottom: -83px;
+      content: '';
+      display: block;
+      height: 4%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transform: skewY(-3.5deg);
+      transform-origin: 100%;
+      z-index: 3;
+      }
+*/ }
+  section#who-are-we div.wrapper {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    section#who-are-we div.wrapper h2 {
+      flex: 1 1 100%;
+      padding-bottom: 50px;
+      margin-top: -150px;
+      position: relative;
+      z-index: 100; }
+    section#who-are-we div.wrapper .person {
+      flex: 1 1 100%;
+      padding: 2% 5%;
+      color: #fff; }
+      @media only screen and (min-width: 992px) {
+        section#who-are-we div.wrapper .person {
+          flex: 0 1 40%; } }
+      section#who-are-we div.wrapper .person img.person-img {
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+        float: left;
+        shape-outside: inset(1% round 50%);
+        -webkit-shape-outside: inset(1% round 50%);
+        margin-right: 20px;
+        margin-bottom: 10px; }
+        @media only screen and (min-width: 1200px) {
+          section#who-are-we div.wrapper .person img.person-img {
+            height: 260px;
+            width: 260px; } }
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+          section#who-are-we div.wrapper .person img.person-img {
+            height: 260px;
+            width: 260px; } }
+      section#who-are-we div.wrapper .person .person-data {
+        position: relative;
+        padding: 10px 0 5px 0; }
+        section#who-are-we div.wrapper .person .person-data .person-name {
+          position: absolute;
+          top: 0;
+          left: 200px; }
+          @media only screen and (min-width: 1200px) {
+            section#who-are-we div.wrapper .person .person-data .person-name {
+              left: 260px; } }
+          @media only screen and (min-width: 768px) and (max-width: 992px) {
+            section#who-are-we div.wrapper .person .person-data .person-name {
+              left: 260px; } }
+          section#who-are-we div.wrapper .person .person-data .person-name h3 {
+            font-weight: 700;
+            padding: 0 0 5px 5px; }
+          section#who-are-we div.wrapper .person .person-data .person-name p.tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            padding: 0 0 10px 5px; }
+        section#who-are-we div.wrapper .person .person-data p {
+          font-size: 0.9rem;
+          line-height: 1.6;
+          padding: 40px 5px 0 5px; }
+
+section#where-are-we {
+  position: relative;
+  height: 0;
+  padding-bottom: 75%;
+  background: url(img/google-map-sm.png) no-repeat center top fixed;
+  background-size: cover;
+  margin-top: -5vw;
+  /* set height to pixels if you want angle to change with screen width */ }
+  section#where-are-we svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5vw; }
+  @media only screen and (min-width: 480px) {
+    section#where-are-we {
+      background: url(img/google-map-md.png) no-repeat center top fixed;
+      background-size: cover; } }
+  @media only screen and (min-width: 992px) {
+    section#where-are-we {
+      background: url(img/google-map.png) no-repeat center top fixed;
+      background-size: cover; } }
+  section#where-are-we img {
+    width: 100%; }
+  section#where-are-we h2 {
+    position: relative;
+    z-index: 100; }
+
+/*----------Footer -----------*/
+footer {
+  background-color: #E6E6E6;
+  position: relative;
+  z-index: 1;
+  padding: 0 0 30px 0;
+  margin: 0; }
+  footer .wrapper {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: center; }
+  footer address {
+    padding: 0 20px;
+    text-align: right;
+    flex-shrink: 0; }
+  footer img {
+    width: 180px; }

@@ -1,0 +1,19 @@
+{
+  "name": "vivify-op-website",
+  "version": "1.0.0",
+  "description": "Convert psd file to one-page website",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Anita Tapaji",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  }
+}

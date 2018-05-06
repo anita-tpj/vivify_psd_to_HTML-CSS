@@ -1,0 +1,47 @@
+/*---------- Mixins  ----------*/
+
+@mixin wrap {
+  display: flex;
+  margin: 0 auto;
+  @content;
+}
+
+@mixin wrap-md {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  @content;
+}
+
+@mixin svg {
+  svg{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5vw;  }
+  /* set height to pixels if you want angle to change with screen width */
+}
+
+@mixin linx ($link, $visit, $hover, $active) {
+  a {
+      background-color: $link;
+      color: #fff;
+    &:visited {
+      background-color: $visit;
+    }
+    &:hover {
+      background-color: $hover;
+    }
+    &:active {
+      background-color: $active;
+    }
+    &.current {
+      background-color: $active;
+    }
+  }
+}
+
+@mixin clip-path-polygon($polygon){
+ -webkit-clip-path: $polygon;
+ clip-path: $polygon;
+}
