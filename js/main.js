@@ -1,0 +1,1 @@
+function checkAffix(){0<$(window).scrollTop()?$("header").addClass("header-affix"):$("header").removeClass("header-affix")}$(document).ready(function(){$("#burger-nav").on("click",function(){$("header nav ul").toggleClass("open")}),$(window).scroll(checkAffix)});
