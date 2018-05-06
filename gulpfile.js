@@ -19,9 +19,9 @@ gulp.task('imageMin', () =>
 
 // Minify JS
 gulp.task('minify', function(){
-    gulp.src('src/js/*.js')
+    gulp.src('scripts/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('js'));
   });
   
 // Compile Sass
@@ -42,12 +42,12 @@ gulp.task('scripts', function(){
 
   
   // Watch & Serve
-gulp.task('serve', ['message', 'imageMin', 'sass'], function() {
+gulp.task('serve', ['message', 'imageMin', 'sass', 'minify'], function() {
     browserSync.init({
         server: ""  
     });
 
-    //gulp.watch('scripts/*.js', ['scripts']);
+    gulp.watch('scripts/*.js', ['minify']);
     gulp.watch('img/*', ['imageMin']);
     gulp.watch('scss/*.scss', ['sass']);
     gulp.watch("*.html").on('change', browserSync.reload);
