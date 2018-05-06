@@ -7,8 +7,8 @@ $(document).ready(function(){
       $(this).toggleClass("open");
     });
 
-   checkAffix();
-   scrollSpyNavbar();
+    $(window).scroll(checkAffix);
+    scrollSpyNavbar();
     
 });// $(document).ready func
 
