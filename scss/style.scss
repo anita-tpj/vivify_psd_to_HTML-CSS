@@ -306,14 +306,15 @@ section#who-are-we{
   padding: 150px 0;
   margin-top: -4vw;
   z-index: 100;
+
   @include clip-path-polygon(polygon(
     0 calc(0% + 5vw),
     100% 0,
     100% calc(100% - 5vw),
     0 100%
   ));
-  clip-path: url("#clip-shape");
-  -webkit-clip-path: url("#clip-shape");
+
+  //@include clip-path-polygon(url("#clip-shape"));//Inslude clip shape from index.html svg sprite
 /*
   &:before {
     background: inherit;
@@ -358,29 +359,28 @@ section#who-are-we{
     }
     .person{
       flex: 1 1 100%;
-      //display: flex;
-      //flex-wrap: wrap;
-      //justify-content: center;
-      //align-items: center;
-      padding: 2% 5%;
+      padding: 5%;
       color: #fff;
-      //.circle-shape
+
       @media only screen and (min-width: $screen-md-min){
         flex: 0 1 40%;
       }
+
       img.person-img{
         border-radius: 50%;
         height:200px;
         width:200px;
         float: left;
-        shape-outside: inset(1% round 50%);
-        -webkit-shape-outside: inset(1% round 50%);
+
+        @include shape-outside(inset(1% round 50%));
         margin-right: 20px;
         margin-bottom: 10px;
+
         @media only screen and (min-width: $screen-lg-min){
           height:260px;
           width:260px;
         }
+
         @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min){
           height:260px;
           width:260px;
@@ -389,21 +389,11 @@ section#who-are-we{
 
       .person-data{
         position: relative;
-        //flex: 1 0 45%;
-        padding: 10px 0 5px 0;
-        //text-align: center;
-        @media only screen and (min-width: $screen-lg-min){
-          //text-align: left;
-        }
-        @media only screen and (min-width: 543px){
-          //text-align: left;
-        }
-        @media only screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1){
-          //text-align: center;
-        }
+        padding: 40px 0 5px 0;
+
         .person-name{
           position: absolute;
-          top: 0;
+          top: 30px;
           left: 200px;
           @media only screen and (min-width: $screen-lg-min){
               left: 260px;
