@@ -14,16 +14,18 @@
 <body>
   <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
     <defs>
-    <g class="polygon" id="polygon-top-banner">
-      <polygon  class="polygon" id="polygon-top-banner" fill="white" points="0,100 100,0 100,100"/>
-    </g>
-    <g class="polygon" id="polygon-where-are-we">
-      <polygon fill="#E6E6E6" points="0,100 100,0 100,100"/>
-    </g>
-    <clipPath id="clip-shape" clipPathUnits="objectBoundingBox" width="0" height="0">
-      <polygon points="0 0.05, 1 0, 1 0.95, 0 1" />
-    </clipPath>
-    </g>
+      <g class="polygon" id="polygon-top-banner">
+        <polygon  class="polygon" id="polygon-top-banner" fill="white" points="0,100 100,0 100,100"/>
+      </g>
+
+      <g class="polygon" id="polygon-where-are-we">
+        <polygon fill="#E6E6E6" points="0,100 100,0 100,100"/>
+      </g>
+
+      <clipPath id="clip-shape" clipPathUnits="objectBoundingBox" width="0" height="0">
+        <polygon points="0 0.05, 1 0, 1 0.95, 0 1" />
+      </clipPath>
+    </defs>
   </svg>
 
   <div class="container">
@@ -240,6 +242,9 @@
     </section><!--#who-are-we -->
 
     <section id="where-are-we">
+        <svg viewBox="0 0 100 100" class="polygon" preserveAspectRatio="none">
+            <use xlink:href="#polygon-where-are-we"></use>
+        </svg>
       <h2>Where are we</h2>
     </section><!--#where-are-we -->
 

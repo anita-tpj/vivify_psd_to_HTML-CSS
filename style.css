@@ -282,8 +282,6 @@ section#who-are-we {
   z-index: 100;
   -webkit-clip-path: polygon(0 calc(0% + 5vw), 100% 0, 100% calc(100% - 5vw), 0 100%);
   clip-path: polygon(0 calc(0% + 5vw), 100% 0, 100% calc(100% - 5vw), 0 100%);
-  clip-path: url("#clip-shape");
-  -webkit-clip-path: url("#clip-shape");
   /*
   &:before {
     background: inherit;
@@ -326,7 +324,7 @@ section#who-are-we {
       z-index: 100; }
     section#who-are-we div.wrapper .person {
       flex: 1 1 100%;
-      padding: 2% 5%;
+      padding: 5%;
       color: #fff; }
       @media only screen and (min-width: 992px) {
         section#who-are-we div.wrapper .person {
@@ -336,8 +334,8 @@ section#who-are-we {
         height: 200px;
         width: 200px;
         float: left;
+        webkit-shape-outside: inset(1% round 50%);
         shape-outside: inset(1% round 50%);
-        -webkit-shape-outside: inset(1% round 50%);
         margin-right: 20px;
         margin-bottom: 10px; }
         @media only screen and (min-width: 1200px) {
@@ -350,10 +348,10 @@ section#who-are-we {
             width: 260px; } }
       section#who-are-we div.wrapper .person .person-data {
         position: relative;
-        padding: 10px 0 5px 0; }
+        padding: 40px 0 5px 0; }
         section#who-are-we div.wrapper .person .person-data .person-name {
           position: absolute;
-          top: 0;
+          top: 30px;
           left: 200px; }
           @media only screen and (min-width: 1200px) {
             section#who-are-we div.wrapper .person .person-data .person-name {
